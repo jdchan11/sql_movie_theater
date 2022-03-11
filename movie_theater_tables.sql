@@ -33,3 +33,12 @@ create table concessions (
 	customer_id INTEGER not null,
 	foreign key (customer_id) references customers(customer_id)
 );
+
+
+-- Alter table column types because I used the numeric field incorrectly above.
+alter table tickets
+alter column ticket_cost type NUMERIC(4,2);
+
+alter table concessions 
+alter column item_cost type NUMERIC(5,2),
+alter column total_cost type NUMERIC(6,2);
